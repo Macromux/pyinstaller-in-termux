@@ -1,7 +1,7 @@
 This repo covers the issues with PyInstaller in termux.
  . . . . . . . . . . 
 
-# pyinstaller-in-termux
+## pyinstaller-in-termux
 
 **Error When Installing Pyinstaller in Termux:**
                  
