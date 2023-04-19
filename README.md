@@ -1,5 +1,5 @@
 ##   pyinstaller-in-termux
-***
+
 This repo covers the issues with PyInstaller in termux.
  . . . . . . . . . . 
 
@@ -7,9 +7,9 @@ This repo covers the issues with PyInstaller in termux.
 
 ***
 
-**Error When Installing Pyinstaller in Termux:**
+Error When Installing Pyinstaller in Termux:
             
-               --Error Log--
+               --Error Log Instalation--
    ```
 1.   ERROR: Command errored out with exit status 1:
 2.   command: /data/data/com.termux/files/usr/bin/python3 /data/data/com.termux/files/usr/lib/python3.10/site-packages/pip/_vendor/pep517/in_process/_in_process.py build_wheel /data/data/com.termux/files/usr/tmp/tmp3w5vqddw
@@ -49,20 +49,61 @@ This repo covers the issues with PyInstaller in termux.
 46. Failed to build pyinstaller
 47. ERROR: Could not build wheels for pyinstaller, which is required to install pyproject.toml-based projects
 ```
+##
+
 #### Requirements:
-- -- gcc
+- -- gcc (libllvm)
 - -- clang
 - -- python
 > ***(Installed)***
 
+##
+
 ### Fixing-Instalation
 
+- #### Setup
 
+    $ `apt update && apt upgrade`
 
+    $ `cd $HOME`
 
+    $ `mkdir exetest`
 
+    $ `nano hello.py`
 
+> Example code {
+> ``` python
+> print("Hello, PyInstaller")
+> ```
+> }
 
+##
 
+- #### Method
 
+The list of packages should be Installed:
 
+- gcc ([libllvm](https://termux.librehat.com/apt/termux-main/pool/main/libl/libllvm/))
+
+> Package gcc is not available, but is referred to by another package.
+>> This may mean that the package is missing, has been obsoleted, or
+is only available from another source.
+
+$ `pkg install libllvm`
+
+- [`binutils` package](https://grimler.se/termux-packages-24/pool/main/b/binutils/)
+
+> This packages is needed for the strip utility provided by termux in the package - binutils.
+>> Without it, PyInstaller won't be able to work anyways, as `objdump/objcopy` is required from binnutils.
+
+$ `pkg install binutils`
+
+- [`ldd` package](https://mirror.iscas.ac.cn/termux/termux-packages-24/pool/main/l/ldd/)
+
+> ldd (List Dynamic Dependencies) is a *nix utility, required for The module PyInstaller.
+
+$ `pkg install ldd`
+##
+*Now Install PyInstaller*,
+
+- pip install pyinstaller
