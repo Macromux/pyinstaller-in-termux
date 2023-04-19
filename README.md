@@ -1,9 +1,11 @@
 # pyinstaller-in-termux
+
 This repo talks and covers the issues with PyInstaller in termux.
+ . . . . . . . . . . 
 
-Error When Installing Pyinstaller in Termux
+**Error When Installing Pyinstaller in Termux:**
 
-   ERROR: Command errored out with exit status 1:
+   ```ERROR: Command errored out with exit status 1:
    command: /data/data/com.termux/files/usr/bin/python3 /data/data/com.termux/files/usr/lib/python3.10/site-packages/pip/_vendor/pep517/in_process/_in_process.py build_wheel /data/data/com.termux/files/usr/tmp/tmp3w5vqddw
        cwd: /data/data/com.termux/files/usr/tmp/pip-install-9ehmgwym/pyinstaller_396dd277de2f49098f7e5863a15c8bdf
   Complete output (29 lines):
@@ -40,4 +42,5 @@ Error When Installing Pyinstaller in Termux
   ERROR: Failed building wheel for pyinstaller
 Failed to build pyinstaller
 ERROR: Could not build wheels for pyinstaller, which is required to install pyproject.toml-based projects
-
+```
+#### Hello
