@@ -9,7 +9,7 @@ This repo covers the issues with PyInstaller in termux.
 
 Error When Installing Pyinstaller in Termux:
             
-               --Error Log Instalation--
+               --Error Log Installation--
    ```
 1.   ERROR: Command errored out with exit status 1:
 2.   command: /data/data/com.termux/files/usr/bin/python3 /data/data/com.termux/files/usr/lib/python3.10/site-packages/pip/_vendor/pep517/in_process/_in_process.py build_wheel /data/data/com.termux/files/usr/tmp/tmp3w5vqddw
@@ -59,7 +59,7 @@ Error When Installing Pyinstaller in Termux:
 
 ##
 
-### Fixing-Instalation
+### Fixing-Installation
 
 - #### Setup
 
