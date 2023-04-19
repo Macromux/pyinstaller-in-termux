@@ -51,7 +51,9 @@ ERROR: Could not build wheels for pyinstaller, which is required to install pypr
 - -- python
 > ***(Installed)***
 
-### The Method:
+### Fixing-Instalation --
+
+
 
 
 
