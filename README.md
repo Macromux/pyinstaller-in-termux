@@ -1,10 +1,14 @@
+##   pyinstaller-in-termux
+***
 This repo covers the issues with PyInstaller in termux.
  . . . . . . . . . . 
 
-##   pyinstaller-in-termux
+> **Termux Download From** [***f-droid***](https://f-droid.org/F-Droid.apk)
+
+***
 
 **Error When Installing Pyinstaller in Termux:**
-                 
+            
                --Error Log--
    ```
 1.   ERROR: Command errored out with exit status 1:
@@ -51,7 +55,10 @@ This repo covers the issues with PyInstaller in termux.
 - -- python
 > ***(Installed)***
 
-### Fixing-Instalation -->
+### Fixing-Instalation
+
+
+
 
 
 
