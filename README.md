@@ -3,11 +3,46 @@
 This repo covers the issues with PyInstaller in termux.
  . . . . . . . . . . 
 
+> Year: 2023
+>
 > **Termux Download From** [***f-droid***](https://f-droid.org/F-Droid.apk)
+##
+### Sources: 
+##
+   This repo is based on previous sources which have been locked/closed.
+   
+_2021 - 2022_
+
+**<https://github.com/pyinstaller/pyinstaller/issues/6479>**
+
+**<https://github.com/termux/termux-app/issues/1595>**
+
+### Contents:
+##
+- [Requirements](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#requirements)
+
+- [Error Installing Pyinstaller](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#error-when-installing-pyinstaller-in-termux)
+
+- [Fixing-Installation](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#fixing-installation)
+    - [Setup](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#setup)
+    - [Method](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#method)
+
+- [Error Converting Python To Exe](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#error-when-installing-pyinstaller-in-termux)
+
+- [Patch Note](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#patch-note)
+
+- [Fixage](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#fixage)
+    - [Command](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#command)
+##
+### Requirements:
+- -- gcc (libllvm)
+- -- clang
+- -- python
+> ***(Installed)***
 
 ***
 
-Error When Installing Pyinstaller in Termux:
+#### Error When Installing Pyinstaller in Termux:
             
                --Error Log Installation--
    ```
@@ -51,14 +86,6 @@ Error When Installing Pyinstaller in Termux:
 ```
 ##
 
-#### Requirements:
-- -- gcc (libllvm)
-- -- clang
-- -- python
-> ***(Installed)***
-
-##
-
 ### Fixing-Installation
 
 - #### Setup
@@ -83,7 +110,7 @@ Error When Installing Pyinstaller in Termux:
 
 The list of packages should be Installed:
 
-- gcc ([libllvm](https://termux.librehat.com/apt/termux-main/pool/main/libl/libllvm/))
+- gcc ([`libllvm`](https://termux.librehat.com/apt/termux-main/pool/main/libl/libllvm/))
 
 > Package gcc is not available, but is referred to by another package.
 >> This may mean that the package is missing, has been obsoleted, or
@@ -116,7 +143,7 @@ $ `pkg install ldd`
 
 ***
 
-Error When Converting Python To Exe:
+#### Error When Converting Python To Exe:
 
       -- Error Log Converting to exe --
 Full error log - <https://paste.ubuntu.com/p/Jcq5kQHnTT/> 
@@ -165,7 +192,7 @@ OSError: Python library not found: libpython3.8mu.so.1.0, libpython3.8m.so, libp
       * apt-get install python-dev
     * If you're building Python by yourself, please rebuild your Python with `--enable-shared` (or, `--enable-framework` on Darwin)
 ```
-##  
+## Patch Note:
 This Error may originate from a older version 
 of `Pyinstaller 3.6`, 
 This has been patched 
@@ -190,7 +217,7 @@ diff -u -r /data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstall
              paths.extend(['/lib32', '/usr/lib32', '/usr/lib/i386-linux-gnu'])
 ```
 ##
-Command:
+- #### Command:
 > diff -u -r /data/data/com.termux/files/usr/
 > lib/python3.8/site-packages/PyInstaller.orig/
 > depend/bindepend.py /data/data/com.termux/files/usr/lib/python3.8/
