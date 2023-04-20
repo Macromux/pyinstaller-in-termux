@@ -221,7 +221,7 @@ diff -u -r /data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstall
 > diff -u -r /data/data/com.termux/files/usr/
 > lib/python3.8/site-packages/PyInstaller.orig/
 > depend/bindepend.py /data/data/com.termux/files/usr/lib/python3.8/
-> site-packages/PyInstaller/depend/bindepend.py
+> site-packages/PyInstaller/depend/bindepend.py (May not be needed)
 
 *Now, edit with nano or vim.*
 
@@ -234,5 +234,5 @@ from "**paths = ['/lib', '/usr/lib']**"
 to 
 "**paths = ['/data/data/com.termux/files/usr/lib', '/lib', '/usr/lib']**" 
 
-that's all you need to do.
+That's all you need to do.
 ##
