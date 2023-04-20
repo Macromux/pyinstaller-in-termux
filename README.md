@@ -130,7 +130,9 @@ Full error log - <https://paste.ubuntu.com/p/Jcq5kQHnTT/>
 356 DEBUG: script: /data/data/com.termux/files/home/exetest/hello.py
 357 INFO: Extending PYTHONPATH with paths
 ['/data/data/com.termux/files/home/exetest', '/data/data/com.termux/files/home/exetest']
-..................
+. . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . .
 Traceback (most recent call last):
   File "/data/data/com.termux/files/usr/bin/pyinstaller", line 8, in <module>
     sys.exit(run())
@@ -163,11 +165,46 @@ OSError: Python library not found: libpython3.8mu.so.1.0, libpython3.8m.so, libp
       * apt-get install python-dev
     * If you're building Python by yourself, please rebuild your Python with `--enable-shared` (or, `--enable-framework` on Darwin)
 ```
-   
+##  
 This Error may originate from a older version 
 of `Pyinstaller 3.6`, 
 This has been patched 
 in the version `Pyinstaller 5.10.1`.
 
-> This Error occurs, Because it cannot find the termux 
+> This Error occurs, Because Pyinstaller cannot find the termux 
 > lib path and has to be added manually to Pyinstaller paths.
+##
+#### Fixage
+``` diff
+diff -u -r /data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller.orig/depend/bindepend.py /data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller/depend/bindepend.py
+--- /data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller.orig/depend/bindepend.py	2020-07-03 12:40:51.609419646 +0200
++++ /data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller/depend/bindepend.py	2020-07-03 12:42:50.369419561 +0200
+@@ -780,7 +780,7 @@
+     # Look in the known safe paths.
+     if lib is None:
+         # Architecture independent locations.
+-        paths = ['/lib', '/usr/lib']
++        paths = ['/data/data/com.termux/files/usr/lib', '/lib', '/usr/lib']
+         # Architecture dependent locations.
+         if compat.architecture == '32bit':
+             paths.extend(['/lib32', '/usr/lib32', '/usr/lib/i386-linux-gnu'])
+```
+##
+Command:
+> diff -u -r /data/data/com.termux/files/usr/
+> lib/python3.8/site-packages/PyInstaller.orig/
+> depend/bindepend.py /data/data/com.termux/files/usr/lib/python3.8/
+> site-packages/PyInstaller/depend/bindepend.py
+
+*Now, edit with nano or vim.*
+
+change line 780 in file 
+**"data/data/com.termux/usr/lib/python3.9/
+site-packages/PyInstaller/depend/bindepend.py"**
+
+from "**paths = ['/lib', '/usr/lib']**" 
+to 
+"**paths = ['/data/data/com.termux/files/usr/lib', '/lib', '/usr/lib']**" 
+
+that's all you need to do.
+##
