@@ -119,6 +119,55 @@ $ `pkg install ldd`
 Error When Converting Python To Exe:
 
       -- Error Log Converting to exe --
-<https://paste.ubuntu.com/p/Jcq5kQHnTT/>
+Full error log - <https://paste.ubuntu.com/p/Jcq5kQHnTT/> 
+```
+331 INFO: PyInstaller: 3.6
+331 INFO: Python: 3.8.3
+336 INFO: Platform: Linux-4.4.177-18057978-aarch64-with-libc
+338 INFO: wrote /data/data/com.termux/files/home/exetest/hello.spec
+339 DEBUG: Testing for UPX ...
+353 INFO: UPX is not available.
+356 DEBUG: script: /data/data/com.termux/files/home/exetest/hello.py
+357 INFO: Extending PYTHONPATH with paths
+['/data/data/com.termux/files/home/exetest', '/data/data/com.termux/files/home/exetest']
+..................
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/bin/pyinstaller", line 8, in <module>
+    sys.exit(run())
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller/__main__.py", line 114, in run
+    run_build(pyi_config, spec_file, **vars(args))
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller/__main__.py", line 65, in run_build
+    PyInstaller.building.build_main.main(pyi_config, spec_file, **kwargs)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller/building/build_main.py", line 734, in main
+    build(specfile, kw.get('distpath'), kw.get('workpath'), kw.get('clean_build'))
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller/building/build_main.py", line 681, in build
+    exec(code, spec_namespace)
+  File "/data/data/com.termux/files/home/HTML_TABLE_TO_CSV.spec", line 6, in <module>
+    a = Analysis(['HTML_TABLE_TO_CSV.py'],
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller/building/build_main.py", line 244, in __init__
+    self.__postinit__()
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller/building/datastruct.py", line 160, in __postinit__
+    self.assemble()
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller/building/build_main.py", line 478, in assemble
+    self._check_python_library(self.binaries)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller/building/build_main.py", line 568, in _check_python_library
+    python_lib = bindepend.get_python_library_path()
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller/depend/bindepend.py", line 945, in get_python_library_path
+    raise IOError(msg)
+OSError: Python library not found: libpython3.8mu.so.1.0, libpython3.8m.so, libpython3.8m.so.1.0, libpython3.8.so.1.0
+    This would mean your Python installation doesn't come with proper library files.
+    This usually happens by missing development package, or unsuitable build parameters of Python installation.
+
+    * On Debian/Ubuntu, you would need to install Python development packages
+      * apt-get install python3-dev
+      * apt-get install python-dev
+    * If you're building Python by yourself, please rebuild your Python with `--enable-shared` (or, `--enable-framework` on Darwin)
+```
    
-This Error may originate from a older version of Pyinstaller
+This Error may originate from a older version 
+of `Pyinstaller 3.6`, 
+This has been patched 
+in the version `Pyinstaller 5.10.1`.
+
+> This Error occurs, Because it cannot find the termux 
+> lib path and has to be added manually to Pyinstaller paths.
