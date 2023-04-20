@@ -114,3 +114,8 @@ $ `pkg install ldd`
 
 > Output: Hello, Pyinstaller
 
+***
+
+Error When Converting Python To Exe:
+
+       --Error Log Converting to exe--
