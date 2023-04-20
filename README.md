@@ -107,3 +107,9 @@ $ `pkg install ldd`
 *Now Install PyInstaller*,
 
 - pip install pyinstaller
+
+- pyinstaller hello.py
+
+- ./hello.py
+
+> Output: Hello, Pyinstaller
