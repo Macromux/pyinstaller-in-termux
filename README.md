@@ -198,7 +198,8 @@ Command:
 
 *Now, edit with nano or vim.*
 
-change line 780 in file 
+change line 780 in file
+
 **"data/data/com.termux/usr/lib/python3.9/
 site-packages/PyInstaller/depend/bindepend.py"**
 
