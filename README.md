@@ -174,7 +174,7 @@ in the version `Pyinstaller 5.10.1`.
 > This Error occurs, Because Pyinstaller cannot find the termux 
 > lib path and has to be added manually to Pyinstaller paths.
 ##
-#### Fixage
+### Fixage
 ``` diff
 diff -u -r /data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller.orig/depend/bindepend.py /data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller/depend/bindepend.py
 --- /data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller.orig/depend/bindepend.py	2020-07-03 12:40:51.609419646 +0200
