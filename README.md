@@ -19,20 +19,20 @@ _2021 - 2022_
 
 ### Contents:
 ##
-- [Requirements](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#requirements)
+- [Requirements](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#requirements)
 
-- [Error Installing Pyinstaller](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#error-when-installing-pyinstaller-in-termux)
+- [Error Installing Pyinstaller](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#error-when-installing-pyinstaller-in-termux)
 
-- [Fixing-Installation](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#fixing-installation)
-    - [Setup](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#setup)
-    - [Method](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#method)
+- [Fixing-Installation](https://github.com/Macromux/pyinstaller-in-termux/edit/blob/README.md#fixing-installation)
+    - [Setup](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#setup)
+    - [Method](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#method)
 
-- [Error Converting Python To Exe](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#error-when-installing-pyinstaller-in-termux)
+- [Error Converting Python To Exe](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#error-when-installing-pyinstaller-in-termux)
 
-- [Patch Note](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#patch-note)
+- [Patch Note](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#patch-note)
 
-- [Fixage](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#fixage)
-    - [Command](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#command)
+- [Fixage](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#fixage)
+    - [Command](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#command)
 ##
 ### Requirements:
 - -- gcc (libllvm)
