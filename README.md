@@ -144,6 +144,9 @@ $ `pkg install ldd`
 ***
 
 #### Error When Converting Python To Exe:
+      -- Error Log Converting to exe (1)--
+Full error log - <https://paste.ubuntu.com/p/JtjcgcGCc5//>
+
 
       -- Error Log Converting to exe --
 Full error log - <https://paste.ubuntu.com/p/Jcq5kQHnTT/> 
