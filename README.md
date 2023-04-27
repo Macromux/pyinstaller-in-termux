@@ -27,13 +27,12 @@ _2021 - 2022_
     - [Setup](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#setup)
     - [Method](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#method)
 
+- [Patch Note](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#patch-note)
+
 - [Error Converting Python To Exe](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#error-when-installing-pyinstaller-in-termux)
 
-- [Patch Note](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#patch-note)
-- [Patch Note](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#patch-note-1)
-
 - [Fixage](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#fixage)
-    - [Command](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#command)
+    - [Permanent Fixage](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#permanent-fixage)
 ##
 ### Requirements:
 - -- gcc (libllvm)
@@ -143,6 +142,11 @@ $ `pkg install ldd`
 > Output: Hello, Pyinstaller
 
 ***
+## Patch Note:
+This Error's given below may originate from a older version 
+of `Pyinstaller 3.6`, 
+This has been patched 
+in the version `Pyinstaller 5.10.1`.
 
 #### Error When Converting Python To Exe:
       -- Error Log Converting to exe (1)--
@@ -169,12 +173,6 @@ File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/PyInstaller/l
     raise ImportError("No module named " + target_package_name)
 ImportError: No module named _bootlocale
 ```
-## Patch Note:
-This Error may originate from a older version 
-of `Pyinstaller 3.6`, 
-This has been patched 
-in the version `Pyinstaller 5.10.1`.
-
 > This Error occurs because Pyinstaller cannot find the
 > module `_bootlocale`, as it has been replaced in python3.10 and above with
 > `_locale` *(Not _bootlocale)*
