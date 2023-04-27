@@ -7,8 +7,7 @@ This repo covers the issues with PyInstaller in termux.
 >
 > **Termux Download From** [***f-droid***](https://f-droid.org/F-Droid.apk)
 ##
-### Sources: 
-##
+## Sources: 
    This repo is based on previous sources which have been locked/closed.
    
 _2021 - 2022_
@@ -17,8 +16,7 @@ _2021 - 2022_
 
 **<https://github.com/termux/termux-app/issues/1595>**
 
-### Contents:
-##
+## Contents:
 - [Requirements](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#requirements)
 
 - [Error Installing Pyinstaller](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#error-when-installing-pyinstaller-in-termux)
@@ -33,6 +31,9 @@ _2021 - 2022_
 
 - [Fixage](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#fixage)
     - [Permanent Fixage](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#permanent-fixage)
+
+- [Fixage](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#fixage-1)
+
 ##
 ### Requirements:
 - -- gcc (libllvm)
@@ -149,6 +150,7 @@ This has been patched
 in the version `Pyinstaller 5.10.1`.
 
 #### Error When Converting Python To Exe:
+##
       -- Error Log Converting to exe (1)--
 Full error log - <https://paste.ubuntu.com/p/JtjcgcGCc5//>
 ```
@@ -263,11 +265,6 @@ OSError: Python library not found: libpython3.8mu.so.1.0, libpython3.8m.so, libp
       * apt-get install python-dev
     * If you're building Python by yourself, please rebuild your Python with `--enable-shared` (or, `--enable-framework` on Darwin)
 ```
-## Patch Note:
-This Error may originate from a older version 
-of `Pyinstaller 3.6`, 
-This has been patched 
-in the version `Pyinstaller 5.10.1`.
 
 > This Error occurs, Because Pyinstaller cannot find the termux 
 > lib path and has to be added manually to Pyinstaller paths.
