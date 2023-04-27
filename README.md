@@ -146,9 +146,68 @@ $ `pkg install ldd`
 #### Error When Converting Python To Exe:
       -- Error Log Converting to exe (1)--
 Full error log - <https://paste.ubuntu.com/p/JtjcgcGCc5//>
+```
+444 INFO: PyInstaller: 3.6
+444 INFO: Python: 3.11.3
+452 INFO: Platform: Linux-4.19.157-perf-g7d267b2193ae-aarch64-with-libc
+453 INFO: wrote /data/data/com.termux/files/home/exetest/hello.spec
+454 INFO: UPX is not available.
+456 INFO: Extending PYTHONPATH with paths
+['/data/data/com.termux/files/home/exetest',
+ '/data/data/com.termux/files/home/exetest']
+456 INFO: checking Analysis
+456 INFO: Building Analysis because Analysis-00.toc is non existent
+457 INFO: Initializing module dependency graph...
+469 INFO: Caching module graph hooks...
+481 INFO: Analyzing base_library.zip ...
+Traceback (most recent call last):
+. . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . .
+File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/PyInstaller/lib/modulegraph/modulegraph.py", line 1664, in _find_head_package
+    raise ImportError("No module named " + target_package_name)
+ImportError: No module named _bootlocale
+```
+## Patch Note:
+This Error may originate from a older version 
+of `Pyinstaller 3.6`, 
+This has been patched 
+in the version `Pyinstaller 5.10.1`.
+
+> This Error occurs because Pyinstaller cannot find the
+> module `_bootlocale`, as it has been replaced in python3.10 and above with
+> `_locale` *(Not _bootlocale)*
+##
+### Fixage
+
+An Easy fix would be to exclude module _bootlocale
+When Building the exe.
+
+- `--exclude-module _bootlocale`
+
+This can be added to end of your command.
+> Example {
+> pyinstaller -F hello.py --exclude-module _bootlocale
+> }
+  
+    **--Permanent Fixage--**
+
+``` diff
+diff -u -r /data/data/com.termux/files/usr/lib/python3.11/site-packages/PyInstaller.orig/compat.py /data/data/com.termux/files/usr/lib/python3.11/site-packages/PyInstaller/compat.py
+--- /data/data/com.termux/files/usr/lib/python3.11/site-packages/PyInstaller.orig/compat.py      2023-04-27 10:49:34.641738683 +0530
++++ /data/data/com.termux/files/usr/lib/python3.11/site-packages/PyInstaller/compat.py   2023-04-27 11:37:29.818720237 +0530
+@@ -842,7 +842,7 @@
+
+ if is_py3:
+     PY3_BASE_MODULES.update({
+-        '_bootlocale',
++        '_locale',
+         '_collections_abc',
+     })
+```
 
 
-      -- Error Log Converting to exe --
+      -- Error Log Converting to exe(2)--
 Full error log - <https://paste.ubuntu.com/p/Jcq5kQHnTT/> 
 ```
 331 INFO: PyInstaller: 3.6
@@ -207,8 +266,7 @@ in the version `Pyinstaller 5.10.1`.
 ### Fixage
 ``` diff
 diff -u -r /data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller.orig/depend/bindepend.py /data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller/depend/bindepend.py
---- /data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller.orig/depend/bindepend.py	2020-07-03 12:40:51.609419646 +0200
-+++ /data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller/depend/bindepend.py	2020-07-03 12:42:50.369419561 +0200
+
 @@ -780,7 +780,7 @@
      # Look in the known safe paths.
      if lib is None:
