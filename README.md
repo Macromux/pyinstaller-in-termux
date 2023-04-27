@@ -190,8 +190,7 @@ This can be added to end of your command.
 > pyinstaller -F hello.py --exclude-module _bootlocale
 > }
   
-    **--Permanent Fixage--**
-
+#### Permanent Fixage:
 ``` diff
 diff -u -r /data/data/com.termux/files/usr/lib/python3.11/site-packages/PyInstaller.orig/compat.py /data/data/com.termux/files/usr/lib/python3.11/site-packages/PyInstaller/compat.py
 --- /data/data/com.termux/files/usr/lib/python3.11/site-packages/PyInstaller.orig/compat.py      2023-04-27 10:49:34.641738683 +0530
@@ -205,7 +204,18 @@ diff -u -r /data/data/com.termux/files/usr/lib/python3.11/site-packages/PyInstal
          '_collections_abc',
      })
 ```
+##
+*You can, edit with nano or vim.*
 
+_change line 842 in file._
+**"data/data/com.termux/usr/lib/python3.11/site-packages/PyInstaller/compat.py"**
+
+From `PY3_BASE_MODULES.update({
+        '_bootlocale',`
+
+To   `PY3_BASE_MODULES.update({
+        'locale',`
+##
 
       -- Error Log Converting to exe(2)--
 Full error log - <https://paste.ubuntu.com/p/Jcq5kQHnTT/> 
@@ -265,8 +275,9 @@ in the version `Pyinstaller 5.10.1`.
 ##
 ### Fixage
 ``` diff
-diff -u -r /data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller.orig/depend/bindepend.py /data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller/depend/bindepend.py
-
+diff -u -r /data/data/com.termux/files/usr/lib/python3.11/site-packages/PyInstaller.orig/depend/bindepend.py /data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstaller/depend/bindepend.py
+--- /data/data/com.termux/files/usr/lib/python3.11/site-packages/PyInstaller.orig/depend/bindepend.py	2020-07-03 12:40:51.609419646 +0200
++++ /data/data/com.termux/files/usr/lib/python3.11/site-packages/PyInstaller/compat.py   2023-04-27 11:37:29.818720237 +0530
 @@ -780,7 +780,7 @@
      # Look in the known safe paths.
      if lib is None:
@@ -278,18 +289,10 @@ diff -u -r /data/data/com.termux/files/usr/lib/python3.8/site-packages/PyInstall
              paths.extend(['/lib32', '/usr/lib32', '/usr/lib/i386-linux-gnu'])
 ```
 ##
-- #### Command:
-> diff -u -r /data/data/com.termux/files/usr/
-> lib/python3.8/site-packages/PyInstaller.orig/
-> depend/bindepend.py /data/data/com.termux/files/usr/lib/python3.8/
-> site-packages/PyInstaller/depend/bindepend.py (May not be needed)
+*You can, edit with nano or vim.*
 
-*Now, edit with nano or vim.*
-
-change line 780 in file
-
-**"data/data/com.termux/usr/lib/python3.9/
-site-packages/PyInstaller/depend/bindepend.py"**
+_change line 780 in file._
+**"data/data/com.termux/usr/lib/python3.11/site-packages/PyInstaller/depend/bindepend.py"**
 
 from "**paths = ['/lib', '/usr/lib']**" 
 to 
