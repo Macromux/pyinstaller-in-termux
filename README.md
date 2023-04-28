@@ -215,7 +215,7 @@ From `PY3_BASE_MODULES.update({
         '_bootlocale',`
 
 To   `PY3_BASE_MODULES.update({
-        'locale',`
+        '_locale',`
 ##
 
       -- Error Log Converting to exe(2)--
