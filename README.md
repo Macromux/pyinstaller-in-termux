@@ -39,6 +39,7 @@ _2021 - 2022_
 - -- gcc (libllvm)
 - -- clang
 - -- python
+- -- python-pip
 > ***(Installed)***
 
 ***
