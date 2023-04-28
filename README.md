@@ -210,7 +210,7 @@ diff -u -r /data/data/com.termux/files/usr/lib/python3.11/site-packages/PyInstal
 *You can, edit with nano or vim.*
 
 _change line 842 in file._
-**"data/data/com.termux/usr/lib/python3.11/site-packages/PyInstaller/compat.py"**
+**"/data/data/com.termux/usr/lib/python3.11/site-packages/PyInstaller/compat.py"**
 
 From `PY3_BASE_MODULES.update({
         '_bootlocale',`
@@ -289,7 +289,7 @@ diff -u -r /data/data/com.termux/files/usr/lib/python3.11/site-packages/PyInstal
 *You can, edit with nano or vim.*
 
 _change line 780 in file._
-**"data/data/com.termux/usr/lib/python3.11/site-packages/PyInstaller/depend/bindepend.py"**
+**"/data/data/com.termux/usr/lib/python3.11/site-packages/PyInstaller/depend/bindepend.py"**
 
 from "**paths = ['/lib', '/usr/lib']**" 
 to 
