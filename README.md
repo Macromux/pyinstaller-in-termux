@@ -32,7 +32,7 @@ _2021 - 2022_
 - [Fixage](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#fixage)
     - [Permanent Fixage](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#permanent-fixage)
 
-- [Fixage](https://github.com/Macromux/pyinstaller-in-termux/edit/main/README.md#fixage-1)
+- [Fixage](https://github.com/Macromux/pyinstaller-in-termux/blob/main/README.md#fixage-1)
 
 ##
 ### Requirements:
