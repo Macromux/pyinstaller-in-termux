@@ -119,14 +119,14 @@ The list of packages should be Installed:
 is only available from another source.
 
 $ `pkg install libllvm`
-
+##
 - [`binutils` package](https://grimler.se/termux-packages-24/pool/main/b/binutils/)
 
 > This packages is needed for the strip utility provided by termux in the package - binutils.
 >> Without it, PyInstaller won't be able to work anyways, as `objdump/objcopy` is required from binnutils.
 
 $ `pkg install binutils`
-
+##
 - [`ldd` package](https://mirror.iscas.ac.cn/termux/termux-packages-24/pool/main/l/ldd/)
 
 > ldd (List Dynamic Dependencies) is a *nix utility, required for The module PyInstaller.
