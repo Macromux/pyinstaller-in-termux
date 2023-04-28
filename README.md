@@ -296,4 +296,8 @@ to
 "**paths = ['/data/data/com.termux/files/usr/lib', '/lib', '/usr/lib']**" 
 
 That's all you need to do.
-##
+***
+- __[YouTube](https://youtube.com/@macromux)__
+[![YouTube](https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/25px-YouTube_full-color_icon_%282017%29.svg.png)](https://youtube.com/@macromux)
+
+- __[Report Issues](https://github.com/Macromux/pyinstaller-in-termux/issues)__
