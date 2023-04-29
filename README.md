@@ -5,7 +5,7 @@ This repo covers the issues with PyInstaller in termux.
 
 > Year: 2023
 >
-> **Termux Download From** [***f-droid***](https://f-droid.org/F-Droid.apk)
+> **Termux Download From** [***f-droid***](https://f-droid.org/repo/com.termux_118.apk)
 ##
 ## Sources: 
    This repo is based on previous sources which have been locked/closed.
